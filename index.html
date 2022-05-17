@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- styles👍 -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container container">
+        <div>
+          <img
+            class="mainLogo"
+            src="./assets/images/logo.svg"
+            alt="snap-logo"
+          />
+        </div>
+        <input type="checkbox" name="" id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <ul class="menu-items">
+          <div class="activeLinks">
+            <li>
+              <div class="dropdown">
+                <a onclick="myFunction()" class="dropbtn">
+                  Features
+                  <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#"
+                    ><img
+                      class="dropdownImg"
+                      src="./assets/images/icon-todo.svg"
+                      alt="todo"
+                    />
+                    Todo List</a
+                  >
+                  <a href="#"
+                    ><img
+                      class="dropdownImg"
+                      src="./assets/images/icon-calendar.svg"
+                      alt="calendar"
+                    />
+                    Calendar</a
+                  >
+                  <a href="#"
+                    ><img
+                      class="dropdownImg"
+                      src="./assets/images/icon-reminders.svg"
+                      alt="reminders"
+                    />
+                    Reminders</a
+                  >
+                  <a href="#"
+                    ><img
+                      class="dropdownImg"
+                      src="./assets/images/icon-planning.svg"
+                      alt="planning"
+                    />
+                    Planning</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown1">
+                <a onclick="myFunction1()" class="dropbtn1">
+                  Company
+                  <i class="fa fa-angle-down"></i>
+                </a>
+                <div id="myDropdown1" class="dropdown-content1">
+                  <a href="#">History</a>
+                  <a href="#">Our Team</a>
+                  <a href="#">Blog</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </div>
+          <div class="dormantLinks">
+            <button class="login">Login</button>
+            <button class="register">Register</button>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <!-- <nav class="navbar">
+      <div class="nav-links">
+        <div>
+          <img src="./assets/images/logo.svg" alt="snap-logo" />
+        </div>
+        <div class="dropdown">
+          <a onclick="myFunction()" class="dropbtn">
+            Features
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#"
+              ><img
+                class="dropdownImg"
+                src="./assets/images/icon-todo.svg"
+                alt="todo"
+              />
+              Todo List</a
+            >
+            <a href="#"
+              ><img
+                class="dropdownImg"
+                src="./assets/images/icon-calendar.svg"
+                alt="calendar"
+              />
+              Calendar</a
+            >
+            <a href="#"
+              ><img
+                class="dropdownImg"
+                src="./assets/images/icon-reminders.svg"
+                alt="reminders"
+              />
+              Reminders</a
+            >
+            <a href="#"
+              ><img
+                class="dropdownImg"
+                src="./assets/images/icon-planning.svg"
+                alt="planning"
+              />
+              Planning</a
+            >
+          </div>
+        </div>
+        <div class="dropdown1">
+          <a onclick="myFunction1()" class="dropbtn1">
+            Company
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <div id="myDropdown1" class="dropdown-content1">
+            <a href="#">History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <a class="specialLinks" href="#">Customer</a>
+        <a class="specialLinks" href="#">About</a>
+      </div>
+      <div>
+        <button class="login">Login</button>
+        <button class="register">Register</button>
+      </div>
+      <span class="menu-icon" onclick="openSideMenu()"
+        ><i class="fa fa-bars"></i
+      ></span>
+      <span class="close-menu" onclick="closeSideMenu()"
+        ><i class="fa fa-times"></i
+      ></span>
+    </nav> -->
+
+    <section class="heroSection">
+      <div class="heroImgSmall">
+        <img src="./assets/images/image-hero-mobile.png" alt="hero image" />
+      </div>
+      <div class="heroText">
+        <h1>
+          Make <br />
+          remote work
+        </h1>
+        <h2 class="heroTextSmall">Make remote work</h2>
+        <p>
+          Get your team in sync, no matter your location. <br />
+          Streamline processes, create team rituals and watch productivity soar.
+        </p>
+        <div>
+          <button
+            class="learnMore main-btn-rect popup-btn"
+            data-popup="popup-reg"
+          >
+            Learn More
+          </button>
+        </div>
+        <div class="heroImgLogo">
+          <img
+            class="heroLogo"
+            src="./assets/images/client-databiz.svg"
+            alt="databiz"
+          />
+          <img
+            class="heroLogo"
+            src="./assets/images/client-audiophile.svg"
+            alt=""
+          />
+          <img class="heroLogo" src="./assets/images/client-meet.svg" alt="" />
+          <img class="heroLogo" src="./assets/images/client-maker.svg" alt="" />
+        </div>
+      </div>
+      <div class="mainImg">
+        <img src="./assets/images/image-hero-desktop.png" alt="" />
+      </div>
+    </section>
+    <section>
+      <div id="popup-reg" class="popup">
+        <div class="popup-content">
+          <div class="event-header">
+            <h6>Group_39 at it!</h6>
+          </div>
+          <form id="send" class="send-form" method="get">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Enter username..."
+                id="name"
+                name="name"
+                required="required"
+              />
+              <label for="name">
+                <i class="fa fa-user"></i>
+              </label>
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                placeholder="Enter phone..."
+                id="phone"
+                name="phone"
+                required="required"
+              />
+              <label for="phone">
+                <i class="fa fa-phone"></i>
+              </label>
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                placeholder="Enter mail..."
+                id="mail"
+                name="mail"
+                required="required"
+              />
+              <label for="mail">
+                <i class="fa fa-envelope"></i>
+              </label>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                placeholder="Enter password..."
+                id="password"
+                name="password"
+                required="required"
+              />
+              <label for="password">
+                <i id="view-password" class="fa fa-key"></i>
+              </label>
+              <div class="passwordToggle">
+                <i onclick="passwordToggle()" class="fa fa-eye"></i>
+                <p onclick="passwordToggle()">show password</p>
+              </div>
+            </div>
+            <button
+              onclick="formCall()"
+              type="submit"
+              class="send-button"
+              name="text"
+              value="Send"
+            >
+              <i class="fa fa-paper-plane"></i>Send
+            </button>
+          </form>
+          <span class="fade-out main-btn-circle">╳</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>
