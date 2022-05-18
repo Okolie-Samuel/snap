@@ -75,61 +75,30 @@ function passwordToggle() {
   }
 }
 
-let nameField = document.getElementById("name");
-let numberField = document.getElementById("phone");
-let emailField = document.getElementById("email");
-let passwordField = document.getElementById("password");
-
-// function validate(e) {
-//   e.preventDefault();
-//   if (!nameField.checkValidity()) {
-//     swal({
-//       title: "oops!",
-//       text: "you entered invalid details",
-//       icon: "error",
-//     });
-//   } else {
-//     swal({
-//       title: "Good JOb!",
-//       text: "registration complete",
-//       icon: "success",
-//     });
-//   }
-// }
-// function formCall() {
-//   $("#send").validate({
-//     submitHandler: function (e) {
-//       e.preventDefault();
-//       $.ajax({
-//         url: url,
-//         type: "POST",
-//         data: $("#send").seriaize(),
-//         success: function () {
-//           console.log("working");
-//           // swal({
-//           //   title: "Good JOb!",
-//           //   text: "registration complete",
-//           //   icon: "success",
-//           // });
-//         },
-//         error: function () {
-//           console.log("not working");
-//           // swal({
-//           //   title: "oops!",
-//           //   text: "you entered invalid details",
-//           //   icon: "error",
-//           // });
-//         },
-//       });
-//     },
-//   });
-// }
-
+let form = $("#send");
+let sendButton = $("#submitButton");
+let closeButton = $("#closeButton");
+form.on("submit", formCall);
 function formCall(e) {
   e.preventDefault();
   $.ajax({
+    type: "POST",
     method: "POST",
     data: $("#send").serialize(),
-    success: console.log("test"),
+    success: function () {
+      console.log("working");
+    },
+    error: function () {
+      closeButton.trigger("click");
+      swal({
+        title: "Good Job!",
+        text: "registration complete",
+        icon: "success",
+      });
+    },
+  });
+
+  $("#send").each(function () {
+    this.reset();
   });
 }

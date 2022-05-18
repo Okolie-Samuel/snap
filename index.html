@@ -205,6 +205,7 @@
         <p>
           Get your team in sync, no matter your location. <br />
           Streamline processes, create team rituals and watch productivity soar.
+          Click the button below to fill our form
         </p>
         <div>
           <button
@@ -239,7 +240,7 @@
           <div class="event-header">
             <h6>Group_39 at it!</h6>
           </div>
-          <form id="send" class="send-form" method="get">
+          <form id="send" class="send-form">
             <div class="form-group">
               <input
                 type="text"
@@ -292,17 +293,11 @@
                 <p onclick="passwordToggle()">show password</p>
               </div>
             </div>
-            <button
-              onclick="formCall()"
-              type="submit"
-              class="send-button"
-              name="text"
-              value="Send"
-            >
+            <button id="submitButton" type="submit" class="send-button">
               <i class="fa fa-paper-plane"></i>Send
             </button>
           </form>
-          <span class="fade-out main-btn-circle">╳</span>
+          <span id="closeButton" class="fade-out main-btn-circle">╳</span>
         </div>
       </div>
     </section>
